@@ -23,7 +23,7 @@ public class DataInitializer implements CommandLineRunner {
             User admin = new User();
             admin.setUsername("admin");
             admin.setEmail("admin@ticketing.com");
-            admin.setPassword(passwordEncoder.encode("admin123"));
+            admin.setPassword(passwordEncoder.encode("Admin@2024"));
             admin.setFirstName("Admin");
             admin.setLastName("User");
             admin.setRole(Role.ADMIN);
@@ -35,7 +35,7 @@ public class DataInitializer implements CommandLineRunner {
             User agent = new User();
             agent.setUsername("agent1");
             agent.setEmail("agent1@ticketing.com");
-            agent.setPassword(passwordEncoder.encode("agent123"));
+            agent.setPassword(passwordEncoder.encode("Agent@2024"));
             agent.setFirstName("Support");
             agent.setLastName("Agent");
             agent.setRole(Role.SUPPORT_AGENT);
@@ -47,7 +47,7 @@ public class DataInitializer implements CommandLineRunner {
             User user = new User();
             user.setUsername("user1");
             user.setEmail("user1@ticketing.com");
-            user.setPassword(passwordEncoder.encode("user123"));
+            user.setPassword(passwordEncoder.encode("User@2024"));
             user.setFirstName("Regular");
             user.setLastName("User");
             user.setRole(Role.USER);

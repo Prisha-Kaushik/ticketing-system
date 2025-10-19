@@ -24,9 +24,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const token = localStorage.getItem('token');
     const userData = localStorage.getItem('user');
     
+    console.log('Auth useEffect - Token:', token);
+    console.log('Auth useEffect - UserData:', userData);
+    
     if (token && userData) {
       try {
-        setUser(JSON.parse(userData));
+        const parsedUser = JSON.parse(userData);
+        console.log('Parsed user data:', parsedUser);
+        setUser(parsedUser);
       } catch (error) {
         console.error('Error parsing user data:', error);
         localStorage.removeItem('token');
@@ -38,7 +43,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (username: string, password: string) => {
     try {
+      console.log('Attempting login for:', username);
       const response: JwtResponse = await authAPI.login({ username, password });
+      console.log('Login response:', response);
       
       const userData: User = {
         id: response.id,
@@ -51,12 +58,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         updatedAt: ''
       };
 
+      console.log('User data to store:', userData);
       localStorage.setItem('token', response.token);
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
       
+      console.log('Token stored:', response.token);
+      console.log('User set in state:', userData);
+      
       toast.success('Login successful!');
     } catch (error: any) {
+      console.error('Login error:', error);
       toast.error(error.response?.data || 'Login failed');
       throw error;
     }

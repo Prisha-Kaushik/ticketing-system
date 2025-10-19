@@ -107,9 +107,9 @@ The system creates default accounts on startup:
 
 | Role | Username | Password |
 |------|----------|----------|
-| Admin | admin | admin123 |
-| Support Agent | agent1 | agent123 |
-| User | user1 | user123 |
+| Admin | admin | Admin@2024 |
+| Support Agent | agent1 | Agent@2024 |
+| User | user1 | User@2024 |
 
 ## 📁 Project Structure
 

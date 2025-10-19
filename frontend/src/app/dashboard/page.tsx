@@ -16,19 +16,25 @@ export default function DashboardPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log('Dashboard useEffect - loading:', loading, 'user:', user);
+    
     if (!loading && !user) {
+      console.log('No user found, redirecting to login');
       router.push('/auth/login');
       return;
     }
 
     if (user) {
+      console.log('User found, fetching tickets');
       fetchTickets();
     }
   }, [user, loading, router]);
 
   const fetchTickets = async () => {
     try {
+      console.log('Fetching tickets...');
       const data = await ticketAPI.getMy();
+      console.log('Tickets fetched:', data);
       setTickets(data);
     } catch (error) {
       console.error('Error fetching tickets:', error);

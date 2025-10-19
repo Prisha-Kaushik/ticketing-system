@@ -103,9 +103,9 @@ export default function LoginPage() {
           <div className="mt-8 p-4 bg-gray-100 rounded-md">
             <h3 className="text-sm font-medium text-gray-900 mb-2">Demo Accounts:</h3>
             <div className="text-xs text-gray-600 space-y-1">
-              <div><strong>Admin:</strong> admin / admin123</div>
-              <div><strong>Support Agent:</strong> agent1 / agent123</div>
-              <div><strong>User:</strong> user1 / user123</div>
+              <div><strong>Admin:</strong> admin / Admin@2024</div>
+              <div><strong>Support Agent:</strong> agent1 / Agent@2024</div>
+              <div><strong>User:</strong> user1 / User@2024</div>
             </div>
           </div>
         </form>
